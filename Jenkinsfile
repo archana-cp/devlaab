@@ -22,7 +22,7 @@ pipeline {
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([string(
-                    credentialsId: 'dockerhub-creds',
+                    credentialsId: 'dockerhub-creds1',
                     variable: 'DOCKER-PAT'
                 )]) {
                     bat '''
