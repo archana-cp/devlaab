@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "archanapatil2903/app"
+        DOCKER_IMAGE = "archanapatil2903/ab"
     }
     stages {
         stage('Clone Repository') {
