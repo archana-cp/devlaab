@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "archanapatil2903/goat"
+        DOCKER_IMAGE = "archanapatil2903/app"
     }
 
     stages {
@@ -22,12 +22,12 @@ pipeline {
         stage('Login to Docker Hub') {
             steps {
                 withCredentials([string(
-                    credentialsId: 'dockerhub-PAT',
-                    variable: 'dockerhub-creds'
+                    credentialsId: 'dockerhub-creds1',
+                    variable: 'DOCKER-PAT'
                 )]) {
                     bat '''
                     @echo off
-                    echo %DOCKER_PAT%|docker login -u archanapatil2903 --password-stdin
+                    echo %DOCKER-PAT%|docker login -u archanapatil2903 --password-stdin
                    if errorlevel 1 exit /b 1
                     '''
                 }
