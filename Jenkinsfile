@@ -23,7 +23,7 @@ pipeline {
             steps {
                 withCredentials([string(
                     credentialsId: 'dockerhub-PAT',
-                    variable: 'DOCKER_PAT'
+                    variable: 'dockerhub-creds'
                 )]) {
                     bat '''
                     @echo off
