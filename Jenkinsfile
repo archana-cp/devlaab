@@ -4,7 +4,6 @@ pipeline {
     environment {
         DOCKER_IMAGE = "archanapatil2903/app"
     }
-
     stages {
         stage('Clone Repository') {
             steps {
